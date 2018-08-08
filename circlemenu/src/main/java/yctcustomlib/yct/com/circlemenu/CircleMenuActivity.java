@@ -17,6 +17,11 @@ public class CircleMenuActivity extends AppCompatActivity {
     private ImageView icon_home;
     private ImageView icon_menu;
 
+    private boolean isshowLevel1 = true;
+    private boolean isShowLevel2 = true;
+    private boolean isShowLevel3 = true;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +43,16 @@ public class CircleMenuActivity extends AppCompatActivity {
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.icon_home:
+
                     break;
                 case R.id.icon_menu:
+                    if (isShowLevel3) {
+                        Tool.hideView(level3, 0);
+                        isShowLevel3 = false;
+                    }else{
+                        Tool.showView(level3,0);
+                        isShowLevel3 = true;
+                    }
                     break;
 
             }
